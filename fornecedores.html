@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fornecedores</title>
+    <link rel="stylesheet" href="fornecedores.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./assets/Logo Pim.png" sizes="100%" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="./assets/Logo Pim.png" alt="Logo Sanja Farm" class="logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="produtos.html" class="nav-item"><i class="fas fa-box"></i> Produtos</a></li>
+                <li><a href="fornecedores.html" class="nav-item active"><i class="fas fa-truck"></i> Fornecedores</a></li>
+                <li><a href="clientes.html" class="nav-item"><i class="fas fa-users"></i> Clientes</a></li>
+                <li><a href="perfil.html" class="nav-item"><i class="fas fa-user"></i> Perfil</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" placeholder="Buscar..." class="search-input">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="section" id="fornecedores">
+            <h2>Listagem de Fornecedores</h2>
+            <table id="supplierTable">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>ID</th>
+                        <th>CPF/CNPJ</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fornecedor 1</td>
+                        <td>001</td>
+                        <td>123.456.789-00</td>
+                        <td>
+                            <button class="action-button" onclick="editSupplier(1)">Editar</button>
+                            <button class="action-button" onclick="deleteSupplier(1)">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fornecedor 2</td>
+                        <td>002</td>
+                        <td>987.654.321-00</td>
+                        <td>
+                            <button class="action-button" onclick="editSupplier(2)">Editar</button>
+                            <button class="action-button" onclick="deleteSupplier(2)">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <button class="add-button" onclick="toggleSupplierForm()">Adicionar Fornecedor</button>
+
+            <section id="supplierFormSection" class="form-section" style="display: none;">
+                <h2 id="supplierFormTitle">Adicionar Fornecedor</h2>
+                <form id="supplierForm" onsubmit="submitSupplierForm(event)">
+                    <input type="hidden" id="supplierId" />
+                    <div class="form-group">
+                        <label>Nome: <input type="text" id="supplierName" required /></label>
+                    </div>
+                    <div class="form-group">
+                        <label>CPF/CNPJ: <input type="text" id="supplierCPF" required /></label>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone: <input type="text" id="supplierPhone" required /></label>
+                    </div>
+                    <div class="form-group">
+                        <label>Email: <input type="email" id="supplierEmail" required /></label>
+                    </div>
+                    <div class="form-group">
+                        <label>Endereço: <input type="text" id="supplierAddress" required /></label>
+                    </div>
+                    <div class="form-group">
+                        <label>Produtos: <input type="text" id="supplierProducts" required /></label>
+                    </div>
+                    <div class="form-group">
+                        <label>Licenças/Certificações: <input type="text" id="supplierLicenses" required /></label>
+                    </div>
+                    <button type="submit" class="submit-button">Salvar</button>
+                    <button type="button" onclick="cancelSupplierForm()">Cancelar</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script src="fornecedores.js"></script>
+</body>
+</html>
