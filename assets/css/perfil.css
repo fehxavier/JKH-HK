@@ -1,131 +1,122 @@
-/* Configurações gerais */
+/* Define estilo global para todos os elementos */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove margem padrão */
+  padding: 0; /* Remove padding padrão */
+  box-sizing: border-box; /* Inclui bordas no cálculo das dimensões */
 }
 
+/* Estilo para o corpo da página */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f9e4;
+  font-family: 'Arial', sans-serif; /* Define a fonte padrão */
+  background-color: #f0f9e4; /* Fundo com tom claro */
 }
 
-/* Cabeçalho */
+/* Estilo para o cabeçalho */
 .header {
-  background-color: #4a9c3b;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #4a9c3b; /* Cor de fundo verde */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
+/* Estilo para a barra de navegação */
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex; /* Exibe itens em linha */
+  align-items: center; /* Alinha verticalmente os itens */
+  justify-content: space-between; /* Espaçamento entre os extremos */
   padding: 10px 20px;
-  flex-wrap: wrap; /* Ajusta os itens em telas menores */
+  flex-wrap: wrap; /* Permite que os itens ocupem várias linhas em telas menores */
 }
 
-/* Logo */
+/* Estilo para o logotipo */
 .logo-container .logo {
-  width: 50px;
+  width: 50px; /* Define largura do logotipo */
 }
 
-/* Links de navegação */
+/* Estilo para os links de navegação */
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 15px; /* Espaçamento entre itens */
+  list-style: none; /* Remove marcação padrão da lista */
+  display: flex; /* Exibe itens em linha */
+  gap: 15px; /* Espaço entre os links */
 }
 
 .nav-item {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  transition: color 0.3s;
+  color: white; /* Cor branca para os textos */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: bold; /* Negrito */
+  transition: color 0.3s; /* Transição suave para mudança de cor */
 }
 
 .nav-item:hover {
-  color: #a8e063;
+  color: #a8e063; /* Altera a cor ao passar o mouse */
 }
 
-/* Estilo do container de busca e logout */
+/* Estilo para o campo de busca */
 .search-container {
-  display: flex;
+  display: flex; /* Exibe itens em linha */
   align-items: center;
-  gap: 10px; /* Espaçamento entre barra de busca, lupa e logout */
+  gap: 10px; /* Espaço entre os elementos */
 }
 
-/* Barra de pesquisa */
 .search-input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 180px;
+  width: 180px; /* Largura da barra de busca */
 }
 
-/* Botões de busca e logout */
-button {
-  background-color: #6ac85b; /* Fundo verde */
+.search-button {
+  background-color: #6ac85b;
   border: none;
-  color: white; /* Ícone branco */
-  width: 40px; /* Tamanho quadrado */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #4a9c3b;
+}
+
+/* Estilo para botões gerais */
+button {
+  background-color: #6ac85b;
+  border: none;
+  color: white;
+  width: 40px;
   height: 40px;
-  border-radius: 5px; /* Borda arredondada */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Animações suaves */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Animações no hover */
 button:hover {
-  background-color: #4a9c3b; /* Tom mais escuro */
-  transform: scale(1.1); /* Efeito de aumento */
+  background-color: #4a9c3b;
+  transform: scale(1.1); /* Aumenta ligeiramente no hover */
 }
 
-/* Botão de logout (ajuste específico para o botão de logout) */
+/* Estilo para o botão de logout */
 #logoutBtn {
-  margin-left: 10px; /* Espaçamento adicional para logout */
+  background-color: #d32f2f;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Alteração de responsividade para a barra superior */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 10px 15px; /* Ajusta o padding da navbar */
-    flex-direction: column; /* Coloca a navbar em coluna */
-    align-items: flex-start; /* Alinha itens à esquerda */
-  }
-
-  .logo-container .logo {
-    width: 40px; /* Ajusta o tamanho da logo para telas pequenas */
-  }
-
-  .nav-links {
-    flex-direction: column; /* Links em coluna em telas menores */
-    gap: 10px;
-    width: 100%; /* Ocupa a largura total */
-    margin-top: 10px; /* Distância entre os itens e a logo */
-  }
-
-  .search-container {
-    width: 100%; /* Ocupa a largura disponível */
-    gap: 15px;
-    flex-direction: column; /* Alinha os elementos em coluna */
-  }
-
-  .search-input {
-    width: 100%; /* Barra de pesquisa ocupa toda a largura disponível */
-  }
-
-  /* Botões de pesquisa e logout */
-  button {
-    width: 35px; /* Ajusta o tamanho do botão */
-    height: 35px;
-  }
+#logoutBtn:hover {
+  background-color: #b71c1c;
+  transform: scale(1.1);
 }
 
-/* Conteúdo principal */
+/* Estilo do conteúdo principal */
 .main-content {
   padding: 20px;
 }
@@ -142,6 +133,23 @@ button:hover {
   color: #4a9c3b;
 }
 
+/* Estilo dos botões de ação */
+.add-button, .submit-button {
+  background-color: #4a9c3b;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover, .submit-button:hover {
+  background-color: #6ac85b;
+}
+
+/* Estilo do formulário */
 .form-group {
   margin-bottom: 15px;
 }
@@ -159,56 +167,91 @@ button:hover {
   border-radius: 5px;
 }
 
-.submit-button {
-  background-color: #6ac85b;
+/* Estilo da tabela */
+#clientTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#clientTable thead {
+  background-color: #4a9c3b;
   color: white;
-  padding: 10px 15px;
+}
+
+#clientTable th, #clientTable td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+#clientTable tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+#clientTable tbody tr:hover {
+  background-color: #e0f7e7;
+  cursor: pointer;
+}
+
+/* Estilo para botões de ação na tabela */
+.action-button {
+  background-color: #4a9c3b;
+  color: white;
   border: none;
+  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.submit-button:hover {
-  background-color: #4a9c3b;
+.action-button:hover {
+  background-color: #6ac85b;
+}
+
+/* Botão adicional de ação */
+button[type="button"] {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+
+button[type="button"]:hover {
+  background-color: #bbb;
+}
+
+/* Estilo do contêiner "Adicionar Novo" */
+.add-new-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f7fbf7;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-new-container h3 {
+  color: #4a9c3b;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
   .nav-links {
-    flex-direction: column; /* Links em coluna em telas menores */
+    flex-direction: column;
     gap: 10px;
-    width: 100%; /* Ocupa largura total */
+    width: 100%;
   }
 
   .search-container {
-    flex-wrap: wrap; /* Ajusta os elementos em linha ou coluna */
+    flex-wrap: wrap;
     gap: 15px;
   }
 
   .search-input {
-    width: 100%; /* Ocupa a largura disponível */
-  }
-
-  .main-content {
-    padding: 10px; /* Reduz o padding em telas menores */
-  }
-
-  .section {
-    margin: 20px 0; /* Reduz a margem em telas menores */
-    padding: 15px; /* Reduz o padding em telas menores */
-  }
-
-  .section h2 {
-    font-size: 20px; /* Ajusta o tamanho da fonte do título */
-  }
-
-  .form-group input {
-    padding: 8px; /* Ajusta o padding do input */
-  }
-
-  .submit-button {
-    width: 100%; /* Botão ocupa toda a largura disponível */
-    padding: 12px; /* Aumenta o padding do botão */
+    width: 100%;
   }
 }

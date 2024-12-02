@@ -217,25 +217,250 @@ button[type="button"]:hover {
   }
 }
 /* Estilo do botão de Logout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f9e4;
+}
+
+.header {
+  background-color: #4a9c3b;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  flex-wrap: wrap; /* Ajusta os itens em telas menores */
+}
+
+.logo-container .logo {
+  width: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-item:hover {
+  color: #a8e063;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaçamento entre barra de busca, lupa e logout */
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 180px;
+}
+
+.search-button {
+  background-color: #6ac85b;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #4a9c3b;
+}
+
+/* Botões gerais */
+button {
+  background-color: #6ac85b; /* Fundo verde */
+  border: none;
+  color: white; /* Ícone branco */
+  width: 40px; /* Tamanho quadrado */
+  height: 40px;
+  border-radius: 5px; /* Borda arredondada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animações suaves */
+}
+
+button:hover {
+  background-color: #4a9c3b; /* Tom mais escuro */
+  transform: scale(1.1); /* Efeito de aumento */
+}
+
+/* Botão de logout */
 #logoutBtn {
-  background-color: #e74c3c; /* Cor de fundo vermelha */
-  color: white; /* Cor do texto em branco */
+  background-color: #d32f2f; /* Fundo vermelho */
+  color: white; /* Texto branco */
+  width: 40px; /* Largura padrão */
+  height: 40px; /* Altura padrão */
+  border-radius: 5px; /* Bordas arredondadas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animações suaves */
+}
+
+#logoutBtn:hover {
+  background-color: #b71c1c; /* Vermelho mais escuro no hover */
+  transform: scale(1.1); /* Efeito de aumento no hover */
+}
+
+/* Estilo do conteúdo principal */
+.main-content {
+  padding: 20px;
+}
+
+.section {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  color: #4a9c3b;
+}
+
+/* Estilo do botão Adicionar Cliente */
+.add-button, .submit-button {
+  background-color: #4a9c3b;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover, .submit-button:hover {
+  background-color: #6ac85b;
+}
+
+/* Estilo do formulário */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #4a9c3b;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilo da tabela */
+#clientTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#clientTable thead {
+  background-color: #4a9c3b;
+  color: white;
+}
+
+#clientTable th, #clientTable td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+#clientTable tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+#clientTable tbody tr:hover {
+  background-color: #e0f7e7;
+  cursor: pointer;
+}
+
+.action-button {
+  background-color: #4a9c3b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #6ac85b;
+}
+
+button[type="button"] {
+  background-color: #ccc;
+  color: black;
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  font-weight: bold;
-  margin-left: 10px; /* Espaço à esquerda */
-  margin-right: 10px; /* Espaço à direita */
+  margin-left: 10px;
+  transition: background-color 0.3s;
 }
 
-#logoutBtn:hover {
-  background-color: #c0392b; /* Cor de fundo vermelha escura no hover */
-  transform: scale(1.05); /* Leve aumento no tamanho do botão */
+button[type="button"]:hover {
+  background-color: #bbb;
 }
 
-#logoutBtn:active {
-  background-color: #9b2d1f; /* Cor de fundo quando pressionado */
-  transform: scale(0.98); /* Efeito de redução ao pressionar */
+.add-new-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f7fbf7;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-new-container h3 {
+  color: #4a9c3b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column; /* Links em coluna em telas menores */
+    gap: 10px;
+    width: 100%; /* Ocupa largura total */
+  }
+
+  .search-container {
+    flex-wrap: wrap; /* Ajusta os elementos em linha ou coluna */
+    gap: 15px;
+  }
+
+  .search-input {
+    width: 100%; /* Ocupa a largura disponível */
+  }
 }

@@ -1,61 +1,66 @@
+/* Define estilo global para todos os elementos */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove margem padrão */
+  padding: 0; /* Remove padding padrão */
+  box-sizing: border-box; /* Inclui bordas no cálculo das dimensões */
 }
 
+/* Estilo para o corpo da página */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f9e4;
+  font-family: 'Arial', sans-serif; /* Define a fonte padrão */
+  background-color: #f0f9e4; /* Fundo com tom claro */
 }
 
-
+/* Estilo para o cabeçalho */
 .header {
-  background-color: #4a9c3b;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #4a9c3b; /* Cor de fundo verde */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
+/* Estilo para a barra de navegação */
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex; /* Exibe itens em linha */
+  align-items: center; /* Alinha verticalmente os itens */
+  justify-content: space-between; /* Espaçamento entre os extremos */
   padding: 10px 20px;
-  flex-wrap: wrap; /* Ajusta os itens em telas menores */
+  flex-wrap: wrap; /* Permite que os itens ocupem várias linhas em telas menores */
 }
 
+/* Estilo para o logotipo */
 .logo-container .logo {
-  width: 50px;
+  width: 50px; /* Define largura do logotipo */
 }
 
+/* Estilo para os links de navegação */
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 15px;
+  list-style: none; /* Remove marcação padrão da lista */
+  display: flex; /* Exibe itens em linha */
+  gap: 15px; /* Espaço entre os links */
 }
 
 .nav-item {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  color: white; /* Cor branca para os textos */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: bold; /* Negrito */
+  transition: color 0.3s; /* Transição suave para mudança de cor */
 }
 
 .nav-item:hover {
-  color: #a8e063;
+  color: #a8e063; /* Altera a cor ao passar o mouse */
 }
 
-
+/* Estilo para o campo de busca */
 .search-container {
-  display: flex;
+  display: flex; /* Exibe itens em linha */
   align-items: center;
-  gap: 10px; /* Espaçamento entre barra de busca, lupa e logout */
+  gap: 10px; /* Espaço entre os elementos */
 }
 
 .search-input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 180px;
+  width: 180px; /* Largura da barra de busca */
 }
 
 .search-button {
@@ -63,7 +68,7 @@ body {
   border: none;
   color: white;
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: 100%;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -71,31 +76,46 @@ body {
 .search-button:hover {
   background-color: #4a9c3b;
 }
-/* Botões de busca e logout */
+
+/* Estilo para botões gerais */
 button {
-  background-color: #6ac85b; /* Fundo verde */
+  background-color: #6ac85b;
   border: none;
-  color: white; /* Ícone branco */
-  width: 40px; /* Tamanho quadrado */
+  color: white;
+  width: 40px;
   height: 40px;
-  border-radius: 5px; /* Borda arredondada */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Animações suaves */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Animações no hover */
 button:hover {
-  background-color: #4a9c3b; /* Tom mais escuro */
-  transform: scale(1.1); /* Efeito de aumento */
+  background-color: #4a9c3b;
+  transform: scale(1.1); /* Aumenta ligeiramente no hover */
 }
 
-/* Botão de logout */
+/* Estilo para o botão de logout */
 #logoutBtn {
-  margin-left: 10px; /* Espaçamento adicional para logout */
+  background-color: #d32f2f;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+#logoutBtn:hover {
+  background-color: #b71c1c;
+  transform: scale(1.1);
+}
+
 /* Estilo do conteúdo principal */
 .main-content {
   padding: 20px;
@@ -113,7 +133,7 @@ button:hover {
   color: #4a9c3b;
 }
 
-/* Estilo do botão Adicionar Cliente */
+/* Estilo dos botões de ação */
 .add-button, .submit-button {
   background-color: #4a9c3b;
   color: white;
@@ -174,7 +194,7 @@ button:hover {
   cursor: pointer;
 }
 
-
+/* Estilo para botões de ação na tabela */
 .action-button {
   background-color: #4a9c3b;
   color: white;
@@ -189,7 +209,7 @@ button:hover {
   background-color: #6ac85b;
 }
 
-
+/* Botão adicional de ação */
 button[type="button"] {
   background-color: #ccc;
   color: black;
@@ -205,7 +225,7 @@ button[type="button"]:hover {
   background-color: #bbb;
 }
 
-
+/* Estilo do contêiner "Adicionar Novo" */
 .add-new-container {
   margin-top: 20px;
   padding: 20px;
@@ -221,17 +241,17 @@ button[type="button"]:hover {
 /* Responsividade */
 @media (max-width: 768px) {
   .nav-links {
-    flex-direction: column; /* Links em coluna em telas menores */
+    flex-direction: column;
     gap: 10px;
-    width: 100%; /* Ocupa largura total */
+    width: 100%;
   }
 
   .search-container {
-    flex-wrap: wrap; /* Ajusta os elementos em linha ou coluna */
+    flex-wrap: wrap;
     gap: 15px;
   }
 
   .search-input {
-    width: 100%; /* Ocupa a largura disponível */
+    width: 100%;
   }
 }
