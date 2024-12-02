@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fornecedores</title>
-    <link rel="stylesheet" href="fornecedores.css">
+    <link rel="stylesheet" href="../assets/css/fornecedores.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="./assets/Logo Pim.png" sizes="100%" type="image/x-icon">
+    <link rel="icon" href="../assets/Logo Pim.png" sizes="100%" type="image/x-icon">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
             <div class="logo-container">
-                <a href="index.html">
-                    <img src="./assets/Logo Pim.png" alt="Logo Sanja Farm" class="logo">
+                <a href="menu.html">
+                    <img src="../assets/Logo Pim.png" alt="Logo Sanja Farm" class="logo">
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-item"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="menu.html" class="nav-item"><i class="fas fa-home"></i> Início</a></li>
                 <li><a href="produtos.html" class="nav-item"><i class="fas fa-box"></i> Produtos</a></li>
                 <li><a href="fornecedores.html" class="nav-item active"><i class="fas fa-truck"></i> Fornecedores</a></li>
                 <li><a href="clientes.html" class="nav-item"><i class="fas fa-users"></i> Clientes</a></li>
@@ -43,24 +43,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Fornecedor 1</td>
-                        <td>001</td>
-                        <td>123.456.789-00</td>
-                        <td>
-                            <button class="action-button" onclick="editSupplier(1)">Editar</button>
-                            <button class="action-button" onclick="deleteSupplier(1)">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Fornecedor 2</td>
-                        <td>002</td>
-                        <td>987.654.321-00</td>
-                        <td>
-                            <button class="action-button" onclick="editSupplier(2)">Editar</button>
-                            <button class="action-button" onclick="deleteSupplier(2)">Excluir</button>
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
             
@@ -68,28 +51,22 @@
 
             <section id="supplierFormSection" class="form-section" style="display: none;">
                 <h2 id="supplierFormTitle">Adicionar Fornecedor</h2>
-                <form id="supplierForm" onsubmit="submitSupplierForm(event)">
+                <form id="supplierForm"  onsubmit="submitSupplierForm(event)">
                     <input type="hidden" id="supplierId" />
                     <div class="form-group">
-                        <label>Nome: <input type="text" id="supplierName" required /></label>
+                        <label>Nome: <input type="text" id="supplierName" name="nome" required /></label>
                     </div>
                     <div class="form-group">
-                        <label>CPF/CNPJ: <input type="text" id="supplierCPF" required /></label>
+                        <label>CPF/CNPJ: <input type="text" id="supplierCPF" name="cpfCnpj" required /></label>
                     </div>
                     <div class="form-group">
-                        <label>Telefone: <input type="text" id="supplierPhone" required /></label>
+                        <label>Telefone: <input type="text" id="supplierPhone" name="telefone" required /></label>
                     </div>
                     <div class="form-group">
-                        <label>Email: <input type="email" id="supplierEmail" required /></label>
+                        <label>Email: <input type="email" id="supplierEmail" name="email" required /></label>
                     </div>
                     <div class="form-group">
-                        <label>Endereço: <input type="text" id="supplierAddress" required /></label>
-                    </div>
-                    <div class="form-group">
-                        <label>Produtos: <input type="text" id="supplierProducts" required /></label>
-                    </div>
-                    <div class="form-group">
-                        <label>Licenças/Certificações: <input type="text" id="supplierLicenses" required /></label>
+                        <label>Endereço: <input type="text" id="supplierAddress" name="endereco" required /></label>
                     </div>
                     <button type="submit" class="submit-button">Salvar</button>
                     <button type="button" onclick="cancelSupplierForm()">Cancelar</button>
@@ -98,6 +75,6 @@
         </div>
     </main>
 
-    <script src="fornecedores.js"></script>
+    <script src="../assets/js/fornecedores.js"></script>
 </body>
 </html>

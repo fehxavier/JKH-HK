@@ -1,0 +1,203 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #a8e063, #56ab2f); /* Gradiente de verde */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f9e4; /* Fundo suave para toda a página */
+    padding: 50px;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Aumenta a largura da área de login */
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.login-box {
+    width: 100%;
+    text-align: center;
+}
+
+.logo-container {
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 80px;
+}
+
+.login-form .input-group {
+    position: relative;
+    margin-bottom: 20px; /* Aumentado para mais espaçamento */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 20px;
+    padding-left: 50px;
+    border: 2px solid #6ac85b; /* Cor do borde para uniformidade */
+    border-radius: 30px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #4a9c3b; /* Cor ao focar no campo */
+    outline: none;
+}
+
+.icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6ac85b; /* Cor do ícone */
+    font-size: 20px;
+}
+
+.forgot-password {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #6ac85b; /* Cor para o link */
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+/* Estilo para todos os botões */
+button,
+.login-btn,
+.reset-btn,
+.create-btn,
+.back-to-login-btn {
+    display: inline-block;
+    background-color: #4a9c3b; /* Cor do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove borda padrão */
+    border-radius: 30px; /* Borda arredondada */
+    padding: 15px 25px; /* Aumentar o padding para um botão maior */
+    font-size: 18px; /* Tamanho da fonte */
+    text-decoration: none; /* Remove sublinhado */
+    margin-top: 20px; /* Espaçamento acima do botão */
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s; /* Efeitos de transição */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+}
+
+button:hover,
+.login-btn:hover,
+.reset-btn:hover,
+.create-btn:hover,
+.back-to-login-btn:hover {
+    background-color: #6ac85b; /* Efeito de hover */
+    color: white; /* Cor do texto ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+}
+
+button:active,
+.login-btn:active,
+.reset-btn:active,
+.create-btn:active,
+.back-to-login-btn:active {
+    transform: scale(0.95); /* Animação de compressão ao clicar */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Reduz sombra ao clicar */
+}
+
+/* Mensagens de erro e sucesso */
+.error-message,
+.reset-message,
+.create-message {
+    font-size: 14px;
+    margin-top: 10px;
+    display: none; /* Oculto inicialmente */
+    text-align: center;
+}
+
+.reset-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reset-box h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #6ac85b; /* Cor verde para manter a consistência */
+}
+
+.reset-box .input-group {
+    margin-bottom: 20px;
+}
+
+.reset-box .error-message {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.reset-box .icon {
+    display: none; /* Oculta o ícone de usuário no formulário de redefinição de senha */
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 30px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .login-btn,
+    .reset-btn,
+    .create-btn,
+    .back-to-login-btn {
+        font-size: 16px; /* Tamanho da fonte para telas menores */
+    }
+}
+.page-container {
+    background-image: url('../fazenda.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Necessário para o ::before funcionar corretamente */
+    z-index: 0; /* Mantém o fundo no nível correto */
+}
+
+.page-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(88, 202, 70, 0.6); /* Cor verde com transparência */
+    z-index: -1; /* Coloca o overlay atrás do conteúdo */
+}
