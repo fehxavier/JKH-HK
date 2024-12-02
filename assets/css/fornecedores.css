@@ -186,7 +186,8 @@ body {
 /* Botões de Tipo Genérico */
 button[type="button"] {
   background-color: #ccc; 
-  color: black border none;
+  color: black; /* Corrigido */
+  border: none;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
@@ -200,22 +201,41 @@ button[type="button"]:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; /* Muda a direção da navbar em telas menores */
-    align-items: flex-start; /* Alinha os itens à esquerda */
-  }
-
   .nav-links {
-    flex-direction: column; /* Muda a direção dos links de navegação */
-    gap: 10px; /* Ajusta o espaço entre os links */
+    flex-direction: column; /* Links em coluna em telas menores */
+    gap: 10px;
+    width: 100%; /* Ocupa largura total */
   }
 
   .search-container {
-    width: 100%; /* Faz o container de busca ocupar toda a largura */
-    margin-top: 10px; /* Adiciona um espaço acima do container de busca */
+    flex-wrap: wrap; /* Ajusta os elementos em linha ou coluna */
+    gap: 15px;
   }
 
   .search-input {
-    width: calc(100% - 15px); /* Ajusta a largura do input de busca */
+    width: 100%; /* Ocupa a largura disponível */
   }
+}
+/* Estilo do botão de Logout */
+#logoutBtn {
+  background-color: #e74c3c; /* Cor de fundo vermelha */
+  color: white; /* Cor do texto em branco */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: bold;
+  margin-left: 10px; /* Espaço à esquerda */
+  margin-right: 10px; /* Espaço à direita */
+}
+
+#logoutBtn:hover {
+  background-color: #c0392b; /* Cor de fundo vermelha escura no hover */
+  transform: scale(1.05); /* Leve aumento no tamanho do botão */
+}
+
+#logoutBtn:active {
+  background-color: #9b2d1f; /* Cor de fundo quando pressionado */
+  transform: scale(0.98); /* Efeito de redução ao pressionar */
 }

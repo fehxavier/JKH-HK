@@ -1,3 +1,4 @@
+/* Configurações gerais */
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +10,9 @@ body {
   background-color: #f0f9e4;
 }
 
+/* Cabeçalho */
 .header {
-  background-color: #4a9c3b; 
+  background-color: #4a9c3b;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -19,21 +21,25 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
+  flex-wrap: wrap; /* Ajusta os itens em telas menores */
 }
 
+/* Logo */
 .logo-container .logo {
   width: 50px;
 }
 
+/* Links de navegação */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 15px; /* Espaçamento entre itens */
 }
 
 .nav-item {
   color: white;
   text-decoration: none;
+  font-size: 16px;
   font-weight: bold;
   transition: color 0.3s;
 }
@@ -42,33 +48,84 @@ body {
   color: #a8e063;
 }
 
+/* Estilo do container de busca e logout */
 .search-container {
   display: flex;
   align-items: center;
+  gap: 10px; /* Espaçamento entre barra de busca, lupa e logout */
 }
 
+/* Barra de pesquisa */
 .search-input {
-  padding: 10px;
-  border: none;
+  padding: 8px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  margin-right: 5px;
+  width: 180px;
 }
 
-.search-button {
-  background-color: #6ac85b;
+/* Botões de busca e logout */
+button {
+  background-color: #6ac85b; /* Fundo verde */
   border: none;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
+  color: white; /* Ícone branco */
+  width: 40px; /* Tamanho quadrado */
+  height: 40px;
+  border-radius: 5px; /* Borda arredondada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animações suaves */
 }
 
-.search-button:hover {
-  background-color: #4a9c3b;
+/* Animações no hover */
+button:hover {
+  background-color: #4a9c3b; /* Tom mais escuro */
+  transform: scale(1.1); /* Efeito de aumento */
 }
 
+/* Botão de logout (ajuste específico para o botão de logout) */
+#logoutBtn {
+  margin-left: 10px; /* Espaçamento adicional para logout */
+}
 
+/* Alteração de responsividade para a barra superior */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px; /* Ajusta o padding da navbar */
+    flex-direction: column; /* Coloca a navbar em coluna */
+    align-items: flex-start; /* Alinha itens à esquerda */
+  }
+
+  .logo-container .logo {
+    width: 40px; /* Ajusta o tamanho da logo para telas pequenas */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Links em coluna em telas menores */
+    gap: 10px;
+    width: 100%; /* Ocupa a largura total */
+    margin-top: 10px; /* Distância entre os itens e a logo */
+  }
+
+  .search-container {
+    width: 100%; /* Ocupa a largura disponível */
+    gap: 15px;
+    flex-direction: column; /* Alinha os elementos em coluna */
+  }
+
+  .search-input {
+    width: 100%; /* Barra de pesquisa ocupa toda a largura disponível */
+  }
+
+  /* Botões de pesquisa e logout */
+  button {
+    width: 35px; /* Ajusta o tamanho do botão */
+    height: 35px;
+  }
+}
+
+/* Conteúdo principal */
 .main-content {
   padding: 20px;
 }
@@ -84,7 +141,6 @@ body {
 .section h2 {
   color: #4a9c3b;
 }
-
 
 .form-group {
   margin-bottom: 15px;
@@ -117,8 +173,42 @@ body {
   background-color: #4a9c3b;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
   .nav-links {
-    flex-direction: column;
+    flex-direction: column; /* Links em coluna em telas menores */
+    gap: 10px;
+    width: 100%; /* Ocupa largura total */
+  }
+
+  .search-container {
+    flex-wrap: wrap; /* Ajusta os elementos em linha ou coluna */
+    gap: 15px;
+  }
+
+  .search-input {
+    width: 100%; /* Ocupa a largura disponível */
+  }
+
+  .main-content {
+    padding: 10px; /* Reduz o padding em telas menores */
+  }
+
+  .section {
+    margin: 20px 0; /* Reduz a margem em telas menores */
+    padding: 15px; /* Reduz o padding em telas menores */
+  }
+
+  .section h2 {
+    font-size: 20px; /* Ajusta o tamanho da fonte do título */
+  }
+
+  .form-group input {
+    padding: 8px; /* Ajusta o padding do input */
+  }
+
+  .submit-button {
+    width: 100%; /* Botão ocupa toda a largura disponível */
+    padding: 12px; /* Aumenta o padding do botão */
   }
 }

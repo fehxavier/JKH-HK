@@ -20,6 +20,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
+  flex-wrap: wrap; /* Ajusta os itens em telas menores */
 }
 
 .logo-container .logo {
@@ -47,13 +48,14 @@ body {
 .search-container {
   display: flex;
   align-items: center;
+  gap: 10px; /* Espaçamento entre barra de busca, lupa e logout */
 }
 
 .search-input {
-  padding: 10px;
-  border: none;
+  padding: 8px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  margin-right: 5px;
+  width: 180px;
 }
 
 .search-button {
@@ -69,7 +71,31 @@ body {
 .search-button:hover {
   background-color: #4a9c3b;
 }
+/* Botões de busca e logout */
+button {
+  background-color: #6ac85b; /* Fundo verde */
+  border: none;
+  color: white; /* Ícone branco */
+  width: 40px; /* Tamanho quadrado */
+  height: 40px;
+  border-radius: 5px; /* Borda arredondada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animações suaves */
+}
 
+/* Animações no hover */
+button:hover {
+  background-color: #4a9c3b; /* Tom mais escuro */
+  transform: scale(1.1); /* Efeito de aumento */
+}
+
+/* Botão de logout */
+#logoutBtn {
+  margin-left: 10px; /* Espaçamento adicional para logout */
+}
 /* Estilo do conteúdo principal */
 .main-content {
   padding: 20px;
@@ -192,8 +218,20 @@ button[type="button"]:hover {
   color: #4a9c3b;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
   .nav-links {
-    flex-direction: column;
+    flex-direction: column; /* Links em coluna em telas menores */
+    gap: 10px;
+    width: 100%; /* Ocupa largura total */
+  }
+
+  .search-container {
+    flex-wrap: wrap; /* Ajusta os elementos em linha ou coluna */
+    gap: 15px;
+  }
+
+  .search-input {
+    width: 100%; /* Ocupa a largura disponível */
   }
 }
